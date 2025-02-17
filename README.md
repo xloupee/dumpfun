@@ -1,4 +1,6 @@
-# dumpfun
+# DumpFun - Solana Paper Trading Platform
+
+A platform for practicing cryptocurrency trading with virtual assets on the Solana blockchain.
 
 ## Setup Instructions
 1. Create virtual environment: `python -m venv venv`
@@ -16,3 +18,11 @@
 - Database integration ready
 - Docker support
 - Testing setup
+- Real-time Solana token price tracking
+- Paper trading simulation
+- Portfolio management
+- Transaction history
+- Price charts and analytics
+- Solana token metadata integration
+- User authentication and profiles
+- Virtual wallet management
