@@ -9,4 +9,7 @@ python-dotenv>=1.0.0
 sqlalchemy>=2.0.22
 alembic>=1.12.1
 pytest>=7.4.3
-httpx>=0.25.0 
+httpx>=0.23.0,<0.24.0
+solana==0.30.0
+web3==6.11.1
+requests>=2.31.0 
