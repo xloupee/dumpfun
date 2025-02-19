@@ -6,8 +6,8 @@ const CoinAddress = () => {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
-    // Hardcoded address for testing
-    const testAddress = 'HbhPMcCXN7cbPoZoTYBvg8NKaiSnjmTCDcE44CARpump';
+    // Using USDC token address
+    const testAddress = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v';
 
     const formatNumber = (num) => {
         if (num >= 1000000000) {
@@ -27,14 +27,26 @@ const CoinAddress = () => {
         setTokenData(null);
 
         try {
-            const response = await fetch(`http://localhost:8000/api/v1/tokens/price/${testAddress}`);
+            const response = await fetch(
+                `http://localhost:8000/api/v1/tokens/${testAddress}/price`
+            );
+            
             if (!response.ok) {
-                throw new Error('Failed to fetch token data');
+                const errorData = await response.json();
+                if (response.status === 503) {
+                    throw new Error("Jupiter API is temporarily unavailable. Please try again later.");
+                } else if (response.status === 404) {
+                    throw new Error("Token not found. Please check the address and try again.");
+                } else {
+                    throw new Error(errorData.detail || `Error: ${response.status}`);
+                }
             }
+            
             const data = await response.json();
             setTokenData(data);
         } catch (err) {
-            setError('Unable to fetch token data. Please check the contract address.');
+            setError(err.message || 'Unable to fetch token data. Please try again later.');
+            console.error('Fetch error:', err);
         } finally {
             setLoading(false);
         }
@@ -62,12 +74,14 @@ const CoinAddress = () => {
                 <div className="token-data">
                     <div className="data-card price">
                         <h3>Current Price</h3>
-                        <p>${tokenData.price.toFixed(8)} USD</p>
+                        <p>${tokenData.price ? tokenData.price.toFixed(8) : '0.00'} USD</p>
                     </div>
-                    <div className="data-card market-cap">
-                        <h3>Market Cap</h3>
-                        <p>{formatNumber(tokenData.market_cap)}</p>
-                    </div>
+                    {tokenData.market_cap && (
+                        <div className="data-card market-cap">
+                            <h3>Market Cap</h3>
+                            <p>{formatNumber(tokenData.market_cap)}</p>
+                        </div>
+                    )}
                 </div>
             )}
         </div>

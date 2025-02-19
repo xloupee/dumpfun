@@ -4,8 +4,8 @@ import secrets
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "DumpFun"
-    PROJECT_VERSION: str = "1.0.0"
-    PROJECT_DESCRIPTION: str = "DumpFun Backend API"
+    PROJECT_VERSION: str = "0.1.0"
+    PROJECT_DESCRIPTION: str = "Solana Paper Trading Platform"
     API_V1_STR: str = "/api/v1"
     
     # Security
