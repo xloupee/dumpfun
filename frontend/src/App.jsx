@@ -1,18 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import CoinAddress from './pages/CoinAddress/CoinAddress'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { LoginPage } from './pages/LoginPage'
+import { HomePage } from './pages/HomePage'
+import { RootLayout } from './components/RootLayout'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const router = createBrowserRouter([
+  {
+    element: <RootLayout />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />,
+      },
+      {
+        path: '/login',
+        element: <LoginPage />,
+      },
+    ],
+  },
+])
 
-  return (
-    <div className="app">
-      <h1>DumpFun Token Tracker</h1>
-      <CoinAddress />
-    </div>
-  )
+function App() {
+  return <RouterProvider router={router} />
 }
 
 export default App
