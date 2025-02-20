@@ -1,20 +1,30 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { LoginPage } from './pages/LoginPage'
-import { HomePage } from './pages/HomePage'
-import { RootLayout } from './components/RootLayout'
+import { Portfolio } from './pages/Portfolio/Portfolio'
+import CoinAddress from './pages/CoinAddress/CoinAddress'
+import { RootLayout } from './layouts/RootLayout'
 import './App.css'
 
 const router = createBrowserRouter([
   {
+    path: '/',
     element: <RootLayout />,
     children: [
       {
         path: '/',
-        element: <HomePage />,
+        element: <Portfolio />,
       },
       {
-        path: '/login',
-        element: <LoginPage />,
+        path: '/portfolio',
+        element: <Portfolio />,
+      },
+      {
+        path: '/spot',
+        element: <CoinAddress />,
+      },
+      {
+        path: '/perpetuals',
+        element: <CoinAddress />,
       },
     ],
   },

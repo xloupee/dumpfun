@@ -2,25 +2,20 @@ import axios from 'axios';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1';
 
-export interface Token {
-  Currency: {
-    Name: string;
-    Symbol: string;
-    MintAddress: string;
-  };
-  PriceInUSD: number;
+export interface TokenPrice {
+  price: number;
+  token_address: string;
+  vs_token: string;
+  last_updated: string;
+  market_cap: number | null;
 }
 
-export interface TokenPrice {
-  price_usd: number;
-  price: number;
-  token: {
-    Name: string;
-    Symbol: string;
-    MintAddress: string;
-  };
-  last_updated: string;
-  dex: string;
+export interface Token {
+  name: string;
+  symbol: string;
+  address: string;
+  decimals: number;
+  logoURI?: string;
 }
 
 export interface Trade {

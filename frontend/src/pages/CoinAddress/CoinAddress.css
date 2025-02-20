@@ -1,112 +1,15 @@
-.coin-address-container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 12px;
-    background-color: #1a1a1a;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.coin-address-page {
+    padding: 20px;
+    height: calc(100vh - 100px);
+    /* Adjust based on your layout */
+    width: 100%;
 }
 
-.address-form {
-    display: flex;
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.address-input {
-    flex: 1;
-    padding: 0.8rem;
-    border: 1px solid #333;
-    border-radius: 6px;
-    background-color: #2a2a2a;
-    color: #fff;
-    font-size: 1rem;
-}
-
-.address-input:focus {
-    outline: none;
-    border-color: #646cff;
-}
-
-.submit-button {
-    padding: 0.8rem 1.5rem;
-    background-color: #646cff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-.submit-button:hover:not(:disabled) {
-    background-color: #535bf2;
-}
-
-.submit-button:disabled {
-    background-color: #4b4b4b;
-    cursor: not-allowed;
-}
-
-.error-message {
-    color: #ff4646;
-    margin-top: 1rem;
-    padding: 0.8rem;
-    background-color: rgba(255, 70, 70, 0.1);
-    border-radius: 6px;
-}
-
-.token-data {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.data-card {
-    background-color: #2a2a2a;
-    padding: 1.5rem;
+.chart-container {
+    height: 100%;
+    width: 100%;
+    background: #1C1F26;
+    border: 1px solid #2A2E39;
     border-radius: 8px;
-    text-align: center;
-}
-
-.data-card h3 {
-    color: #646cff;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.data-card p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
-    margin: 0;
-}
-
-.data-card.price {
-    border-left: 4px solid #646cff;
-}
-
-.data-card.market-cap {
-    border-left: 4px solid #42c98d;
-}
-
-.address-display {
-    background-color: #2a2a2a;
-    padding: 1rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-
-.address-display code {
-    color: #646cff;
-    background-color: rgba(100, 108, 255, 0.1);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    margin-left: 0.5rem;
-}
-
-.price-display {
-    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
