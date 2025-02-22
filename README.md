@@ -8,7 +8,11 @@ A platform for practicing cryptocurrency trading with virtual assets on the Sola
    - Windows: `.\venv\Scripts\activate`
    - Unix/MacOS: `source venv/bin/activate`
 3. Install dependencies: `pip install -r requirements.txt`
-4. Run development server: `uvicorn app.main:app --reload`
+4. Run development server: 
+   ```bash
+   cd backend
+   PYTHONPATH=$PYTHONPATH:. uvicorn app.main:app --reload
+   ```
 
 ## Features
 - FastAPI framework

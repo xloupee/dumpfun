@@ -1,0 +1,21 @@
+cd frontend
+npm install react-router-dom@6.22.1
+npm install
+npm install @shadcn/ui class-variance-authority clsx tailwindcss-animate lucide-react tailwindcss postcss autoprefixer @radix-ui/react-slot @radix-ui/react-label @radix-ui/react-toast 
+cd backend
+
+# Create virtual environment (if you haven't already)
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On Mac/Linux:
+source venv/bin/activate
+
+# Then install dependencies
+pip install -r requirements.txt
+
+pip install boto3 
+
+uvicorn app.main:app --reload 
